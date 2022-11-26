@@ -1,0 +1,23 @@
+{% extends 'ProgrammingCategory/base.html' %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  <ul class="list-arcitcles">
+    {% for p in posts %}
+      <li>
+        <div class="article-panel">
+          <p class="first">Category: {{ p.cat }}</p>
+          <p class="last">Date: {{ p.time_update|date:"d-m-Y H:i:s" }}</p>
+        </div>
+        {% if p.photo %}
+          <p><img class="img-article-left thumb" src="{{ p.photo.url }}"></p>
+        {% endif %}
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.content|linebreaks|truncatewords:50 }}</p>
+        <div class="clear"></div>
+        <p class="link-read-post"><a href="{{ p.get_absolute_url }}">Read post</a></p>
+        <hr>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
