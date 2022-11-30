@@ -30,5 +30,5 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Developer, DeveloperAdmin)
 admin.site.register(Category, CategoryAdmin)
 
-admin.site.site_title = 'Admin-ponel of site of women'
-admin.site.site_header = 'Admin-ponel of site of women 2'
+admin.site.site_title = 'Admin-ponel of developers'
+admin.site.site_header = 'Admin-ponel of developers'
